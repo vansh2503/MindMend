@@ -34,7 +34,7 @@ const server = http.createServer(app);
 initSocket(server);
 
 const allowedOrigins = [
-  "https://mind-mend-theta.vercel.app/"
+  "https://mind-mend-theta.vercel.app"
 ];
 
 // Middleware
