@@ -5,7 +5,7 @@ import { Server } from 'socket.io';
 let io;
 
 const allowedOrigins = [
-  "https://mindmend-frontend.onrender.com"
+  "https://mind-mend-theta.vercel.app/"
 ];
 
 export const initSocket = (server) => {
