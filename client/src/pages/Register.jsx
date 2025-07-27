@@ -43,17 +43,22 @@ export default function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    console.log("Register form data:", form);
+    console.log("API URL:", `${base}/auth/register`);
+    
     if (form.role === "admin") {
       alert("Admin registration is not allowed.");
       return;
     }
     try {
-      const res = await axios.post(`${base}/api/auth/register`, form);
+      const res = await axios.post(`${base}/auth/register`, form);
+      console.log("Register response:", res.data);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       setUser(res.data.user);
       navigate(`/${res.data.user.role}`);
     } catch (err) {
+      console.error("Register error:", err);
       alert(err.response?.data?.msg || "Registration failed");
     }
   };
