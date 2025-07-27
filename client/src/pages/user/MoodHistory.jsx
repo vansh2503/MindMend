@@ -29,7 +29,7 @@ export default function MoodHistory() {
   useEffect(() => {
     const fetchHistory = async () => {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${base}/api/mood/history`, {
+      const res = await axios.get(`${base}/mood/history`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const sorted = [...res.data].reverse();

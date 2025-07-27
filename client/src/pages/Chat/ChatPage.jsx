@@ -24,7 +24,7 @@ export default function ChatPage() {
   const fetchMessages = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(`${base}/api/messages?partnerId=${receiverId}`, {
+      const res = await axios.get(`${base}/messages?partnerId=${receiverId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessages(res.data);
@@ -38,7 +38,7 @@ export default function ChatPage() {
   const fetchReceiverDetails = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(`${base}/api/users/${receiverId}`, {
+      const res = await axios.get(`${base}/users/${receiverId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setReceiverName(res.data.name);
@@ -65,7 +65,7 @@ export default function ChatPage() {
       setMessages((prev) => [...prev, newMessage]);
 
       await axios.post(
-        `${base}/api/messages`,
+        `${base}/messages`,
         { receiverId, content },
         { headers: { Authorization: `Bearer ${token}` } }
       );

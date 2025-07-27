@@ -12,7 +12,7 @@ export default function CreateSlot() {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      await axios.post(`${base}/api/bookings/slot`, { date, time, duration }, {
+      await axios.post(`${base}/bookings/slot`, { date, time, duration }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert('Slot created');

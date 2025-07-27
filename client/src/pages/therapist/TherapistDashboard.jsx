@@ -13,7 +13,7 @@ export default function TherapistDashboard() {
     const fetchStats = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`${base}/api/bookings/therapist-stats`, {
+        const res = await axios.get(`${base}/bookings/therapist-stats`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setStats(res.data);

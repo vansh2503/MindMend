@@ -24,7 +24,7 @@ export default function ReviewModal({
       const token = localStorage.getItem("token");
 
       await axios.post(
-        `${base}/api/reviews/${appointmentId}`,
+        `${base}/reviews/${appointmentId}`,
         {
           therapistId,
           rating,

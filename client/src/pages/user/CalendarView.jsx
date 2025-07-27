@@ -10,7 +10,7 @@ export default function CalendarView() {
 
   const fetchSlots = async () => {
     const token = localStorage.getItem('token');
-    const res = await axios.get(`${base}/api/bookings/slots`, {
+    const res = await axios.get(`${base}/bookings/slots`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setSlots(res.data);

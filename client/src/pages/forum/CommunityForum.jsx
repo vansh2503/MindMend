@@ -17,7 +17,7 @@ export default function CommunityForum() {
   }, [topic]);
   const fetchPosts = async () => {
     const token = localStorage.getItem("token");
-    const res = await axios.get(`${base}/api/forum/topic/${topic}`, {
+    const res = await axios.get(`${base}/forum/topic/${topic}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log("Fetched posts:", res.data);
@@ -26,7 +26,7 @@ export default function CommunityForum() {
   const handleSubmitPost = async () => {
     const token = localStorage.getItem("token");
     await axios.post(
-      `${base}/api/forum/create`,
+      `${base}/forum/create`,
       { content: newPost, topic, anonymous },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -36,7 +36,7 @@ export default function CommunityForum() {
   const handleComment = async (postId) => {
     const token = localStorage.getItem("token");
     await axios.post(
-      `${base}/api/forum/${postId}/comment`,
+      `${base}/forum/${postId}/comment`,
       { content: commentInputs[postId] },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -46,7 +46,7 @@ export default function CommunityForum() {
   const handleReply = async (postId, commentId) => {
     const token = localStorage.getItem("token");
     await axios.post(
-      `${base}/api/forum/${postId}/comment/${commentId}/reply`,
+      `${base}/forum/${postId}/comment/${commentId}/reply`,
       { content: replyInputs[commentId] },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -56,7 +56,7 @@ export default function CommunityForum() {
   const handleReact = async (postId, emoji) => {
     const token = localStorage.getItem("token");
     const res = await axios.post(
-      `${base}/api/forum/${postId}/react`,
+      `${base}/forum/${postId}/react`,
       { emoji },
       { headers: { Authorization: `Bearer ${token}` } }
     );

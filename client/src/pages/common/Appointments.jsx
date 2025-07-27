@@ -20,7 +20,7 @@ export default function Appointments() {
   const fetchAppointments = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(`${base}/api/bookings/my-appointments`, {
+      const res = await axios.get(`${base}/bookings/my-appointments`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAppointments(res.data);
@@ -35,7 +35,7 @@ export default function Appointments() {
     if (!confirm("Cancel this appointment?")) return;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`${base}/api/bookings/cancel/${id}`, {
+      await axios.delete(`${base}/bookings/cancel/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Cancelled");

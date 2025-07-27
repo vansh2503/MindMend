@@ -10,7 +10,7 @@ export default function SelfHelp() {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get(`${base}/api/resources`, {
+      const res = await axios.get(`${base}/resources`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setResources(res.data);

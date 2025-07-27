@@ -27,7 +27,7 @@ export default function MoodTracker() {
         return;
       }
       const token = localStorage.getItem('token');
-      await axios.post(`${base}/api/mood/log`, {
+      await axios.post(`${base}/mood/log`, {
         mood: selectedMood,
         note
       }, {

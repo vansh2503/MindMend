@@ -14,7 +14,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${base}/api/auth/login`, form);
+      const res = await axios.post(`${base}/auth/login`, form);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       setUser(res.data.user);
@@ -25,7 +25,7 @@ export default function Login() {
   };
 
   const googleLogin = () => {
-    window.location.href = `${base}/api/auth/google`;
+    window.location.href = `${base}/auth/google`;
   };
 
   return (

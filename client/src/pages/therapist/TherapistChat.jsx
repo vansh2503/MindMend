@@ -9,7 +9,7 @@ export default function TherapistChats() {
   useEffect(() => {
     const fetchPartners = async () => {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${base}/api/messages/partners`, {
+      const res = await axios.get(`${base}/messages/partners`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPartners(res.data);

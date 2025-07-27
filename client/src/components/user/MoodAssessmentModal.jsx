@@ -42,7 +42,7 @@ export default function MoodAssessmentModal({ onComplete }) {
 
       try {
         await axios.post(
-          `${base}/api/mood/save`,
+          `${base}/mood/save`,
           {
             answers: newScores,
             score: Math.max(...Object.values(newScores)),

@@ -11,7 +11,7 @@ export default function BookAppointment() {
   const fetchSlots = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get(`${base}/api/bookings/slots`, {
+      const res = await axios.get(`${base}/bookings/slots`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSlots(res.data);
@@ -28,7 +28,7 @@ export default function BookAppointment() {
     const note = notes[slotId] || "";
     try {
       await axios.post(
-        `${base}/api/bookings/book`,
+        `${base}/bookings/book`,
         { slotId, note },
         {
           headers: { Authorization: `Bearer ${token}` },

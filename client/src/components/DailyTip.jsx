@@ -11,7 +11,7 @@ export default function DailyTip() {
   const fetchTip = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${base}/api/tips/daily-tip`);
+      const res = await axios.get(`${base}/tips/daily-tip`);
       setTip(res.data.tip);
     } catch (err) {
       setTip("Did you know writing down 3 things you're grateful for improves mental clarity?");

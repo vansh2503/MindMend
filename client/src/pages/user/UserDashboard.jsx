@@ -73,7 +73,7 @@ export default function UserDashboard() {
       if (!token) return;
 
       try {
-        const res = await axios.get(`${base}/api/selfhelp/user-matches`, {
+        const res = await axios.get(`${base}/selfhelp/user-matches`, {
           headers: { Authorization: `Bearer ${token}` },
           params: {mood: moodCategory}
         });

@@ -21,7 +21,7 @@ export default function VideoCallPage() {
   useEffect(() => {
     const checkAccess = async () => {
       const token = localStorage.getItem("token");
-      const res = await fetch(`${base}/api/bookings/${id}`, {
+      const res = await fetch(`${base}/bookings/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -153,7 +153,7 @@ export default function VideoCallPage() {
       localStreamRef.current?.getTracks().forEach((track) => track.stop());
 
       const token = localStorage.getItem("token");
-      await fetch(`${base}/api/bookings/mark-completed/${id}`, {
+      await fetch(`${base}/bookings/mark-completed/${id}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });

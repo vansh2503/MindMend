@@ -28,7 +28,7 @@ export default function AdminUpload() {
 
   const fetchResources = async () => {
     try {
-      const res = await axios.get(`${base}/api/selfhelp/all`, {
+      const res = await axios.get(`${base}/selfhelp/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const all = res.data;
@@ -46,7 +46,7 @@ export default function AdminUpload() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${base}/api/selfhelp/upload`, form, {
+      await axios.post(`${base}/selfhelp/upload`, form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setForm({
@@ -63,7 +63,7 @@ export default function AdminUpload() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`${base}/api/selfhelp/${id}`, {
+    await axios.delete(`${base}/selfhelp/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchResources();
@@ -71,7 +71,7 @@ export default function AdminUpload() {
 
   const handleApprove = async (id) => {
     await axios.put(
-      `${base}/api/selfhelp/approve/${id}`,
+      `${base}/selfhelp/approve/${id}`,
       {},
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -83,7 +83,7 @@ export default function AdminUpload() {
   const handleAISuggestion = async (category) => {
     setLoading(true);
     await axios.post(
-      `${base}/api/selfhelp/ai-suggest`,
+      `${base}/selfhelp/ai-suggest`,
       { category },
       {
         headers: { Authorization: `Bearer ${token}` },

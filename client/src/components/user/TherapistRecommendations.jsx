@@ -23,7 +23,7 @@ export default function TherapistRecommendations() {
       const token = localStorage.getItem('token');
       try {
         const res = await axios.post(
-          `${base}/api/users/match-therapists`,
+          `${base}/users/match-therapists`,
           { keywords: ['Addiction', 'Behavioral', 'Child', 'Clinical', 'Cognitive', 'Eating Disorder', 'Exercise', 'Trauma', 'Anxiety', 'Grief', 'Sleep'] }, // TODO: Replace with real dynamic keywords
           { headers: { Authorization: `Bearer ${token}` } }
         );

@@ -26,10 +26,10 @@ export default function TherapistCalendar() {
     const fetchData = async () => {
       const token = localStorage.getItem("token");
       const [slotRes, apptRes] = await Promise.all([
-        axios.get(`${base}/api/bookings/slots`, {
+        axios.get(`${base}/bookings/slots`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get(`${base}/api/bookings/my-appointments`, {
+        axios.get(`${base}/bookings/my-appointments`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);

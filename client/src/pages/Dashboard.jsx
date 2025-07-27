@@ -26,7 +26,7 @@ export default function Dashboard() {
       }
 
       try {
-        const response = await axios.get(`${base}/api/auth/me`, {
+        const response = await axios.get(`${base}/auth/me`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -37,7 +37,6 @@ export default function Dashboard() {
         logout();
       }
     };
-
     fetchUserData();
   }, []);
 

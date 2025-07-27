@@ -9,7 +9,7 @@ export default function OAuthSuccess() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${base}/api/auth/me`, { withCredentials: true })
+    axios.get(`${base}/auth/me`, { withCredentials: true })
       .then(res => {
         setUser(res.data);
         localStorage.setItem("user", JSON.stringify(res.data));

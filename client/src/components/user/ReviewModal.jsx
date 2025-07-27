@@ -17,7 +17,7 @@ export default function ReviewModal({ isOpen, onClose, appointmentId, therapistI
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        `${base}/api/reviews`,
+        `${base}/reviews`,
         { therapistId, appointmentId, rating, comment },
         {
           headers: { Authorization: `Bearer ${token}` },
