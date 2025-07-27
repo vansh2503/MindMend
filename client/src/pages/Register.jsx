@@ -44,7 +44,7 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     console.log("Register form data:", form);
-    console.log("API URL:", `${base}/auth/register`);
+    console.log("API URL:", `${base}/api/auth/register`);
     
     if (form.role === "admin") {
       alert("Admin registration is not allowed.");
