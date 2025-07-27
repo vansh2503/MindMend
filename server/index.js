@@ -34,7 +34,6 @@ const server = http.createServer(app);
 initSocket(server);
 
 const allowedOrigins = [
-  "http://localhost:5173",
   "https://mindmend-frontend.onrender.com"
 ];
 

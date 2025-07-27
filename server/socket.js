@@ -5,8 +5,7 @@ import { Server } from 'socket.io';
 let io;
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://mindmend-frontend.onrender.com",
+  "https://mindmend-frontend.onrender.com"
 ];
 
 export const initSocket = (server) => {

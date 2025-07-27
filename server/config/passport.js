@@ -14,7 +14,7 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://mindmend-backend-db68.onrender.com/api/auth/google/callback"
+  callbackURL: "https://mindmend-backend-db68.onrender.com/api/auth/google"
 }, async (accessToken, refreshToken, profile, done) => {
   const existing = await User.findOne({ googleId: profile.id });
   if (existing) return done(null, existing);
