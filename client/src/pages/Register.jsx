@@ -51,7 +51,7 @@ export default function Register() {
       return;
     }
     try {
-      const res = await axios.post(`${base}/auth/register`, form);
+      const res = await axios.post(`${base}/api/auth/register`, form);
       console.log("Register response:", res.data);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
