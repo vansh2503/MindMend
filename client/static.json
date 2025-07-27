@@ -1,0 +1,8 @@
+{
+  "root": "dist",
+  "clean_urls": false,
+  "https_only": true,
+  "routes": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+} 
