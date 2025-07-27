@@ -35,7 +35,7 @@ initSocket(server);
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://mindmend-1.vercel.app",
+  "https://mindmend-frontend.onrender.com"
 ];
 
 // Middleware
